@@ -1,0 +1,64 @@
+# Adult Moderate-Severe TBI Profile (v1 default)
+# GCS 3-12, ICU admission, ICP monitoring
+# Source: TRACK-TBI / CENTER-TBI population parameters
+
+name: adult_moderate_severe_tbi
+description: "Adult moderate-severe TBI (GCS 3-12), ICU admission"
+
+gcs_range: [3, 12]
+marshall_range: [2, 6]
+max_observation_hours: 168  # 7 days
+observation_density: 2.0    # obs/hour
+
+physiology:
+  icp_mean: 22.0
+  icp_std: 8.0
+  map_mean: 80.0
+  map_std: 12.0
+  v_csf_mean: 120.0
+  v_csf_std: 20.0
+  v_cbv_mean: 50.0
+  v_cbv_std: 8.0
+  cvr_mean: 1.6
+  cvr_std: 0.3
+  cbf_mean: 35.0
+  cbf_std: 12.0
+
+biomarker:
+  gfap_cmax_mean: 500.0
+  gfap_cmax_std: 400.0
+  gfap_tmax_hours: 20.0
+  gfap_half_life_hours: 30.0
+  gfap_half_life_std: 3.0
+  uchl1_cmax_mean: 1500.0
+  uchl1_cmax_std: 1000.0
+  uchl1_tmax_hours: 8.0
+  uchl1_half_life_hours: 8.0
+  uchl1_half_life_std: 1.0
+  nfl_cmax_mean: 200.0
+  nfl_cmax_std: 150.0
+
+demographics:
+  age_mean: 42.0
+  age_std: 20.0
+  age_min: 18.0
+  age_max: 90.0
+  male_fraction: 0.65
+  mechanism_weights:
+    fall: 0.35
+    rta: 0.30
+    assault: 0.10
+    sport: 0.10
+    blast: 0.02
+    other: 0.13
+  anticoagulant_rate: 0.08
+  intoxication_rate: 0.30
+
+outcomes:
+  gose_weights: [0.10, 0.10, 0.15, 0.15, 0.15, 0.15, 0.10, 0.10]
+  mortality_rate: 0.15
+  icu_admission_rate: 0.90
+  neurosurgery_rate: 0.30
+
+imaging_available: true
+biomarker_available: true

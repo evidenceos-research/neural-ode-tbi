@@ -1,0 +1,62 @@
+# LMIC Context Profile
+# Limited imaging, biomarker-primary triage
+# Higher RTA rate, younger population, higher mortality
+
+name: lmic_context
+description: "LMIC setting — limited imaging, biomarker-primary triage"
+
+gcs_range: [3, 15]
+marshall_range: [1, 6]
+max_observation_hours: 48
+observation_density: 0.3  # sparse observations
+
+physiology:
+  icp_mean: 15.0
+  icp_std: 6.0
+  map_mean: 85.0
+  map_std: 10.0
+  v_csf_mean: 120.0
+  v_csf_std: 20.0
+  v_cbv_mean: 50.0
+  v_cbv_std: 8.0
+  cvr_mean: 1.6
+  cvr_std: 0.3
+  cbf_mean: 50.0
+  cbf_std: 10.0
+
+biomarker:
+  gfap_cmax_mean: 150.0
+  gfap_cmax_std: 120.0
+  gfap_tmax_hours: 20.0
+  gfap_half_life_hours: 30.0
+  gfap_half_life_std: 3.0
+  uchl1_cmax_mean: 500.0
+  uchl1_cmax_std: 350.0
+  uchl1_tmax_hours: 8.0
+  uchl1_half_life_hours: 8.0
+  uchl1_half_life_std: 1.0
+
+demographics:
+  age_mean: 32.0
+  age_std: 12.0
+  age_min: 18.0
+  age_max: 90.0
+  male_fraction: 0.65
+  mechanism_weights:
+    fall: 0.20
+    rta: 0.50
+    assault: 0.15
+    sport: 0.03
+    blast: 0.02
+    other: 0.10
+  anticoagulant_rate: 0.02
+  intoxication_rate: 0.15
+
+outcomes:
+  gose_weights: [0.12, 0.10, 0.12, 0.15, 0.15, 0.15, 0.11, 0.10]
+  mortality_rate: 0.20
+  icu_admission_rate: 0.40
+  neurosurgery_rate: 0.15
+
+imaging_available: false
+biomarker_available: true

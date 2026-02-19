@@ -1,0 +1,62 @@
+# Pediatric TBI Profile
+# Age 2-17, adjusted physiological bounds
+# Note: GCS less reliable in young children; behavioral changes primary indicator
+
+name: pediatric_tbi
+description: "Pediatric TBI (age 2-17), adjusted physiology"
+
+gcs_range: [3, 15]
+marshall_range: [1, 6]
+max_observation_hours: 72
+observation_density: 1.5
+
+physiology:
+  icp_mean: 8.0
+  icp_std: 3.0
+  map_mean: 70.0
+  map_std: 10.0
+  v_csf_mean: 80.0
+  v_csf_std: 15.0
+  v_cbv_mean: 35.0
+  v_cbv_std: 6.0
+  cvr_mean: 1.6
+  cvr_std: 0.3
+  cbf_mean: 60.0
+  cbf_std: 12.0
+
+biomarker:
+  gfap_cmax_mean: 80.0
+  gfap_cmax_std: 60.0
+  gfap_tmax_hours: 20.0
+  gfap_half_life_hours: 30.0
+  gfap_half_life_std: 3.0
+  uchl1_cmax_mean: 350.0
+  uchl1_cmax_std: 200.0
+  uchl1_tmax_hours: 8.0
+  uchl1_half_life_hours: 8.0
+  uchl1_half_life_std: 1.0
+
+demographics:
+  age_mean: 10.0
+  age_std: 4.0
+  age_min: 2.0
+  age_max: 17.0
+  male_fraction: 0.60
+  mechanism_weights:
+    fall: 0.40
+    rta: 0.15
+    assault: 0.05
+    sport: 0.25
+    blast: 0.0
+    other: 0.15
+  anticoagulant_rate: 0.0
+  intoxication_rate: 0.02
+
+outcomes:
+  gose_weights: [0.02, 0.03, 0.05, 0.10, 0.10, 0.20, 0.25, 0.25]
+  mortality_rate: 0.03
+  icu_admission_rate: 0.20
+  neurosurgery_rate: 0.08
+
+imaging_available: true
+biomarker_available: true

@@ -1,0 +1,62 @@
+# Military/Austere Environment Profile
+# No imaging, point-of-care biomarkers only
+# Blast mechanism dominant, young male population
+
+name: military_austere
+description: "Military/austere environment — no imaging, point-of-care biomarkers only"
+
+gcs_range: [3, 15]
+marshall_range: [1, 6]
+max_observation_hours: 24
+observation_density: 0.5
+
+physiology:
+  icp_mean: 14.0
+  icp_std: 5.0
+  map_mean: 82.0
+  map_std: 10.0
+  v_csf_mean: 120.0
+  v_csf_std: 20.0
+  v_cbv_mean: 50.0
+  v_cbv_std: 8.0
+  cvr_mean: 1.6
+  cvr_std: 0.3
+  cbf_mean: 50.0
+  cbf_std: 10.0
+
+biomarker:
+  gfap_cmax_mean: 120.0
+  gfap_cmax_std: 100.0
+  gfap_tmax_hours: 20.0
+  gfap_half_life_hours: 30.0
+  gfap_half_life_std: 3.0
+  uchl1_cmax_mean: 450.0
+  uchl1_cmax_std: 300.0
+  uchl1_tmax_hours: 8.0
+  uchl1_half_life_hours: 8.0
+  uchl1_half_life_std: 1.0
+
+demographics:
+  age_mean: 28.0
+  age_std: 6.0
+  age_min: 18.0
+  age_max: 45.0
+  male_fraction: 0.90
+  mechanism_weights:
+    fall: 0.05
+    rta: 0.15
+    assault: 0.05
+    sport: 0.0
+    blast: 0.65
+    other: 0.10
+  anticoagulant_rate: 0.01
+  intoxication_rate: 0.05
+
+outcomes:
+  gose_weights: [0.08, 0.08, 0.10, 0.12, 0.15, 0.17, 0.15, 0.15]
+  mortality_rate: 0.12
+  icu_admission_rate: 0.50
+  neurosurgery_rate: 0.10
+
+imaging_available: false
+biomarker_available: true
